@@ -3,18 +3,35 @@ class Ball {
   constructor(x,y) {
     this.x;
     this.y;
+    this.left = `${Math.floor(Math.random()*1500)}px`
+    this.top = `${Math.floor(Math.random()*300)}px`
+
+
   }
 
 
   // Create Ball
   createBall () {
-    const $container = $("#container");
-    let $ball1 = $('<div/>').addClass('balls').attr("id","ball1");
-    $container.append($ball1);
-    let $ball2 = $('<div/>').addClass('balls').attr("id","ball2");
-    $container.append($ball2);
-    let $ball3 = $('<div/>').addClass('balls').attr("id","ball3");
-    $container.append($ball3);
+  const container = document.getElementById('container');
+
+  let ball1 = document.createElement('div');
+  ball1.classList.add("ball");
+  ball1.setAttribute('id','ball1');
+  container.appendChild(ball1);
+  document.getElementById('ball1').style.height = "25px"
+  document.getElementById('ball1').style.left = `${Math.floor(Math.random()*1500)}px`
+  document.getElementById('ball1').style.top = "128px"
+
+  let ball2 = document.createElement('div');
+  ball2.classList.add("ball");
+  ball2.setAttribute('id','ball2');
+  container.appendChild(ball2);
+  document.getElementById('ball2').style.height = "25px";
+  document.getElementById('ball2').style.left = `${Math.floor(Math.random()*1500)}px`
+  document.getElementById('ball2').style.top = "128px"
+
+  // `${Math.floor(Math.random()*300)}px`
+
   }
 
 
@@ -23,14 +40,13 @@ class Ball {
     for (let i = 1; i <= 3; i++) {
     $(`#ball${i}`).click(function(){
 
-      $(`#ball${i}`).animate({ left: "3px"}, 4000,"linear",function()
+      $(`#ball${i}`).animate({ left: "3px"}, Math.floor(Math.random()*10000),"linear",function()
       {
-        $(this).remove();
+        setInterval();
       });
     })
     }
   }
-
 
 
   render() {
@@ -44,9 +60,6 @@ constructor (x,y) {
 
   }
 
-  edge() {
-    let edge = (30,20);
-  }
 
   createBackboard() {
     const container = document.getElementById('container');
@@ -68,46 +81,42 @@ function showCoords(evt){
 
 setInterval(() => {
 
+  let counter = 0
+
   // ball 1
-  let $ball1 = $('#ball1');
+  let $ball1 = $(ball1);
   let offset = $ball1.offset();
   let ballLeft = offset.left;
   let ballTop = offset.top;
 
 
   //ball 2
-  let $ball2 = $('#ball2');
+  let $ball2 = $(ball2);
   let offset2 = $ball2.offset();
-  let ballLeft2 = offset.left;
-  let ballTop2 = offset.top;
-
-  //ball 3
-
-  let $ball3 = $('#ball3');
-  let offset3 = $ball1.offset();
-  let ballLeft3 = offset.left;
-  let ballTop3 = offset.top;
+  let ballLeft2 = offset2.left;
+  let ballTop2 = offset2.top;
 
   // hoop
 
   let $hoop = $('#hoop');
   let b = $hoop.offset();
-  let bLeft = b.left;
-  let bTop =b.top;
+  let hoopLeft = b.left;
+  let hoopTop =b.top;
 
 
-  console.log(`ball 1x : ${ballLeft}`);
-  console.log(`ball 1y: ${ballTop}`)
-  console.log(`bucket x: ${bLeft}`);
-  console.log(`bucket y : ${bTop}`)
+  // console.log(`ball 1x : ${ballLeft}`);
+  // console.log(`ball 1y: ${ballTop}`)
+  // console.log(`bucket x: ${hoopLeft}`);
+  // console.log(`bucket y : ${hoopTop}`)
 
 
-  if ( ballLeft - bLeft <= 35 && Math.abs(ballTop - bTop) <= 12) {
-    alert('collision!');
-  } else if (ballLeft2 - bLeft <= 35 && Math.abs(ballTop2 - bTop) <= 12) {
-    alert('collision2');
-  } else if (ballLeft3 - bLeft <= 35 && Math.abs(ballTop3 - bTop) <= 12) {
-    alert('collision3');
+  if (ballLeft - hoopLeft <= 35 && Math.abs(ballTop - hoopTop) <= 12) {
+    counter += 1
+  }
+  if (ballLeft2 - hoopLeft <= 35 && Math.abs(ballTop - hoopTop) <= 12) {
+    counter += 1
+    console.log('hit2');
+    console.log(counter);
   }
 
 }, 10);
@@ -115,13 +124,6 @@ setInterval(() => {
 
 
 
-
-
-//   setInterval(() => {
-//   let $test = $('#ball2');
-//   let os = $test.offset();
-//   console.log(os.left);
-// }, 1000)
 
 
 
