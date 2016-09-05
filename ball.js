@@ -19,7 +19,7 @@ class Ball {
   ball1.setAttribute('id','ball1');
   container.appendChild(ball1);
   document.getElementById('ball1').style.height = "25px"
-  document.getElementById('ball1').style.left = `${Math.floor(Math.random()*1500)}px`
+  document.getElementById('ball1').style.left = `${Math.floor(Math.random()*900)}px`
   document.getElementById('ball1').style.top = "128px"
 
   let ball2 = document.createElement('div');
@@ -37,7 +37,10 @@ class Ball {
 
 
   clickToMove() {
+
     for (let i = 1; i <= 3; i++) {
+
+
     $(`#ball${i}`).click(function(){
 
       $(`#ball${i}`).animate({ left: "3px"}, Math.floor(Math.random()*10000),"linear",function()
@@ -48,10 +51,26 @@ class Ball {
     }
   }
 
+  score() {
+    let counter = 0;
+    let p = document.createElement('p');
+    p.setAttribute('id','score');
+    container.appendChild(p);
+    p.style.display = 'block';
+    p.innerHTML = 'Score: ' + counter;
+
+
+  }
+
+
+
+
 
   render() {
     a.createBall();
     a.clickToMove();
+    a.score();
+
   }
 }
 
@@ -81,7 +100,8 @@ function showCoords(evt){
 
 setInterval(() => {
 
-  let counter = 0
+
+  let counter = 0;
 
   // ball 1
   let $ball1 = $(ball1);
@@ -112,11 +132,11 @@ setInterval(() => {
 
   if (ballLeft - hoopLeft <= 35 && Math.abs(ballTop - hoopTop) <= 12) {
     counter += 1
+    document.getElementById('score').innerHTML = "Score: " + counter;
   }
   if (ballLeft2 - hoopLeft <= 35 && Math.abs(ballTop - hoopTop) <= 12) {
     counter += 1
-    console.log('hit2');
-    console.log(counter);
+    document.getElementById('score').innerHTML = "Score: " + counter;
   }
 
 }, 10);
@@ -131,7 +151,4 @@ const a = new Ball;
 a.render();
 const b = new Hoop;
 b.createBackboard();
-
-
-
 
