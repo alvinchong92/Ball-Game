@@ -1,154 +1,58 @@
 // What is the ball
 class Ball {
-  constructor(x,y) {
-    this.x;
-    this.y;
-    this.left = `${Math.floor(Math.random()*1500)}px`
-    this.top = `${Math.floor(Math.random()*300)}px`
-
-
+  constructor() {
   }
 
+  createBall() {
+    const container = document.getElementById('container');
 
-  // Create Ball
-  createBall () {
-  const container = document.getElementById('container');
+    const ball1 = document.createElement('div');
+    ball1.classList.add('ball');
+    ball1.setAttribute('id', 'ball1');
+    container.appendChild(ball1);
+    document.getElementById('ball1').style.left = `${Math.floor(Math.random() * 900)}px`;
+    document.getElementById('ball1').style.top = `${Math.floor(Math.random() * 300)}px`;
 
-  let ball1 = document.createElement('div');
-  ball1.classList.add("ball");
-  ball1.setAttribute('id','ball1');
-  container.appendChild(ball1);
-  document.getElementById('ball1').style.height = "25px"
-  document.getElementById('ball1').style.left = `${Math.floor(Math.random()*900)}px`
-  document.getElementById('ball1').style.top = "128px"
+    const ball2 = document.createElement('div');
+    ball2.classList.add('ball');
+    ball2.setAttribute('id', 'ball2');
+    container.appendChild(ball2);
+    document.getElementById('ball2').style.left = `${Math.floor(Math.random() * 900)}px`;
+    document.getElementById('ball2').style.top = `${Math.floor(Math.random() * 300)}px`;
 
-  let ball2 = document.createElement('div');
-  ball2.classList.add("ball");
-  ball2.setAttribute('id','ball2');
-  container.appendChild(ball2);
-  document.getElementById('ball2').style.height = "25px";
-  document.getElementById('ball2').style.left = `${Math.floor(Math.random()*1500)}px`
-  document.getElementById('ball2').style.top = "128px"
+    const ball3 = document.createElement('div');
+    ball3.classList.add('ball');
+    ball3.setAttribute('id', 'ball3');
+    container.appendChild(ball3);
+    document.getElementById('ball3').style.left = `${Math.floor(Math.random() * 900)}px`;
+    document.getElementById('ball3').style.top = `${Math.floor(Math.random() * 300)}px`;
 
-  // `${Math.floor(Math.random()*300)}px`
+    const ball4 = document.createElement('div');
+    ball4.classList.add('ball');
+    ball4.setAttribute('id', 'ball4');
+    container.appendChild(ball4);
+    document.getElementById('ball4').style.left = `${Math.floor(Math.random() * 900)}px`;
+    document.getElementById('ball4').style.top = `${Math.floor(Math.random() * 300)}px`;
 
+    const ball5 = document.createElement('div');
+    ball5.classList.add('ball');
+    ball5.setAttribute('id', 'ball5');
+    container.appendChild(ball5);
+    document.getElementById('ball5').style.left = `${Math.floor(Math.random() * 900)}px`;
+    document.getElementById('ball5').style.top = `${Math.floor(Math.random() * 300)}px`;
   }
-
-
 
   clickToMove() {
-
-    for (let i = 1; i <= 3; i++) {
-
-
-    $(`#ball${i}`).click(function(){
-
-      $(`#ball${i}`).animate({ left: "3px"}, Math.floor(Math.random()*10000),"linear",function()
-      {
-        setInterval();
+    for (let i = 1; i <= 5; i++) {
+      $(`#ball${i}`).click(function () {
+        $(`#ball${i}`).animate({ left: '3px'}, '-100', 'linear', function () {
+          setInterval();
+        });
       });
-    })
     }
   }
-
-  score() {
-    let counter = 0;
-    let p = document.createElement('p');
-    p.setAttribute('id','score');
-    container.appendChild(p);
-    p.style.display = 'block';
-    p.innerHTML = 'Score: ' + counter;
-
-
-  }
-
-
-
-
-
-  render() {
-    a.createBall();
-    a.clickToMove();
-    a.score();
-
-  }
 }
 
-class Hoop {
-constructor (x,y) {
-
-  }
-
-
-  createBackboard() {
-    const container = document.getElementById('container');
-    let hoop = document.createElement('div');
-    hoop.setAttribute('id','hoop')
-    container.appendChild(hoop);
-    let rim = document.createElement('div');
-    rim.setAttribute('id','rim');
-    hoop.appendChild(rim);
-  }
-}
-
-
-function showCoords(evt){
-  let x = evt.clientX;
-  let y = evt.clientY;
-  console.log(x,y)
-}
-
-setInterval(() => {
-
-
-  let counter = 0;
-
-  // ball 1
-  let $ball1 = $(ball1);
-  let offset = $ball1.offset();
-  let ballLeft = offset.left;
-  let ballTop = offset.top;
-
-
-  //ball 2
-  let $ball2 = $(ball2);
-  let offset2 = $ball2.offset();
-  let ballLeft2 = offset2.left;
-  let ballTop2 = offset2.top;
-
-  // hoop
-
-  let $hoop = $('#hoop');
-  let b = $hoop.offset();
-  let hoopLeft = b.left;
-  let hoopTop =b.top;
-
-
-  // console.log(`ball 1x : ${ballLeft}`);
-  // console.log(`ball 1y: ${ballTop}`)
-  // console.log(`bucket x: ${hoopLeft}`);
-  // console.log(`bucket y : ${hoopTop}`)
-
-
-  if (ballLeft - hoopLeft <= 35 && Math.abs(ballTop - hoopTop) <= 12) {
-    counter += 1
-    document.getElementById('score').innerHTML = "Score: " + counter;
-  }
-  if (ballLeft2 - hoopLeft <= 35 && Math.abs(ballTop - hoopTop) <= 12) {
-    counter += 1
-    document.getElementById('score').innerHTML = "Score: " + counter;
-  }
-
-}, 10);
-
-
-
-
-
-
-
-const a = new Ball;
-a.render();
-const b = new Hoop;
-b.createBackboard();
-
+const a = new Ball();
+a.createBall();
+a.clickToMove();
