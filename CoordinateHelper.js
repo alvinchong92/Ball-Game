@@ -10,8 +10,8 @@ setInterval(() => {
   // ball 1
   const $ball1 = $(ball1);
   let offset = $ball1.offset();
-  let ballLeft = offset.left;
-  let ballTop = offset.top;
+  let ballLeft1 = offset.left;
+  let ballTop1 = offset.top;
 
 
   //ball 2
@@ -46,25 +46,20 @@ setInterval(() => {
   let hoopTop =b.top;
 
 
-  if (ballLeft - hoopLeft <= 35 && Math.abs(ballTop - hoopTop) <= 12) {
-    console.log("hit1")
-    document.getElementById('score').innerHTML = "Score: " + count;
+  let count = 0;
+    if (ballLeft1 - hoopLeft <= 35 && Math.abs(ballTop1 - hoopTop) <= 12) {
+      document.getElementById('score').innerHTML = "Ball 1!"
   }
-  if (ballLeft2 - hoopLeft <= 35 && Math.abs(ballTop2 - hoopTop) <= 12) {
-    console.log("hit2")
-    document.getElementById('score').innerHTML = "Score: " + count;
+    if (ballLeft2 - hoopLeft <= 35 && Math.abs(ballTop2 - hoopTop) <= 12) {
+      document.getElementById('score').innerHTML = "Ball 2!"
   }
-  if (ballLeft3 - hoopLeft <= 35 && Math.abs(ballTop3 - hoopTop) <= 12) {
-    console.log("hit3")
-    document.getElementById('score').innerHTML = "Score: " + count;
+    if (ballLeft3 - hoopLeft <= 35 && Math.abs(ballTop3 - hoopTop) <= 12) {
+      document.getElementById('score').innerHTML = "Ball 3!";
   }
-   if (ballLeft4 - hoopLeft <= 35 && Math.abs(ballTop4 - hoopTop) <= 12) {
-    console.log("hit4")
-    document.getElementById('score').innerHTML = "Score: " + count;
+    if (ballLeft4 - hoopLeft <= 35 && Math.abs(ballTop4 - hoopTop) <= 12) {
+      document.getElementById('score').innerHTML = "Ball 4!";
   }
-   if (ballLeft5 - hoopLeft <= 35 && Math.abs(ballTop5 - hoopTop) <= 12) {
-    console.log("hit5")
-    document.getElementById('score').innerHTML = "Score: " + count;
+    if (ballLeft5 - hoopLeft <= 35 && Math.abs(ballTop5 - hoopTop) <= 12) {
+      document.getElementById('score').innerHTML = "Ball 5!";
   }
-
-}, 10);
+}, 200);
