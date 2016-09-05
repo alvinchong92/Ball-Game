@@ -1,16 +1,13 @@
 body {
-  background: rgb(153, 255, 204);
+  background: #6495ED;
 }
 
 .banner {
   text-align: left;
   font-size: 1rem;
-  font-family: 'Lobster', cursive;
-  text-decoration: underline;
+  font-family: 'Signika', sans-serif;
   margin: 0 auto;
   padding: 0;
-  background-color: teal;
-
 
 
 }
@@ -19,7 +16,7 @@ body {
   position: absolute;
   width:  100%;
   height: 320px;
-/*  background: rgb(255, 0, 102);*/
+  background: rgb(255, 0, 102);
   border: 1px solid black;
   border-top: green;
  }
@@ -41,7 +38,7 @@ body {
   position: absolute;
   height: 25px;
   width: 40px;
-  background: black;
+  background: #FF7F50;
   display: inline-block;
   left: 0;
   bottom: 2;
@@ -89,14 +86,4 @@ body {
     100% {
         top:280px;
     }
-
-
-
- /*#floor {
-  position: relative;
-  z-index: 1;
-  height: 50px;
-  width: 100%;
-  background:black;
- }
-*/
+}
