@@ -11,6 +11,3 @@ class Hoop {
     hoop.appendChild(rim);
   }
 }
-
-const b = new Hoop;
-b.createBackboard();
