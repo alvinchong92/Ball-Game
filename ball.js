@@ -1,4 +1,3 @@
-// What is the ball
 class Ball {
   constructor() {
   }
@@ -41,18 +40,4 @@ class Ball {
     document.getElementById('ball5').style.left = `${Math.floor(Math.random() * 900)}px`;
     document.getElementById('ball5').style.top = `${Math.floor(Math.random() * 300)}px`;
   }
-
-  clickToMove() {
-    for (let i = 1; i <= 5; i++) {
-      $(`#ball${i}`).click(function () {
-        $(`#ball${i}`).animate({ left: '3px'}, '-100', 'linear', function () {
-          setInterval();
-        });
-      });
-    }
-  }
 }
-
-const a = new Ball();
-a.createBall();
-a.clickToMove();
