@@ -1,13 +1,21 @@
 class Hoop {
   constructor() {
+    this.hoop = null;
+    this.rim = null;
   }
   createBackboard() {
     const container = document.getElementById('container');
-    const hoop = document.createElement('div');
-    hoop.setAttribute('id', 'hoop');
-    container.appendChild(hoop);
-    const rim = document.createElement('div');
-    rim.setAttribute('id', 'rim');
-    hoop.appendChild(rim);
+    this.hoop = document.createElement('div');
+    this.hoop.setAttribute('id', 'hoop');
+    container.appendChild(this.hoop);
+    this.rim = document.createElement('div');
+    this.rim.setAttribute('id', 'rim');
+    this.hoop.appendChild(this.rim);
+  }
+  render() {
+    b.createBackboard();
   }
 }
+
+const b = new Hoop();
+b.render();

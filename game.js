@@ -1,36 +1,30 @@
 class Game {
   constructor() {
+    this.count =0;
+    this.el = null;
   }
 
   score() {
-    let count = 0;
-    const p = document.createElement('p');
-    p.setAttribute('id','score');
-    container.appendChild(p);
-    p.style.display = 'block';
-    p.innerHTML = 'Hit? '
+    this.el = document.createElement('p');
+    this.el.setAttribute('id','score');
+    container.appendChild(this.el);
+    this.el.style.display = 'block';
+    this.el.innerHTML = 'Hit?'
   }
-
 
   clickToMove() {
-  for (let i = 1; i <= 5; i++) {
-    $(`#ball${i}`).click(function () {
-      $(this).animate({ left: '5px'}, '-10000', 'linear', function () {
-          $(this).hide(200);
+    $('.ball').click(function() {
+      $(this).animate({ 'left': '-200'}, 'linear', function() {
+        $(this).hide(100);
         });
       });
-    }
   }
 
-  render () {
-    a.createBall();
+  render() {
     c.score();
-    b.createBackboard();
     c.clickToMove();
   }
 }
 
-const a = new Ball();
-const b = new Hoop();
 const c = new Game();
 c.render();
