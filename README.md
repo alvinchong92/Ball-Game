@@ -1,6 +1,6 @@
-# Space Jam
+# Balls
 
-https://alvinchong92.github.io/Project-1/
+https://alvinchong92.github.io/Ball-Game/
 
 
 

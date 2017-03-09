@@ -3,8 +3,8 @@ class Hoop {
     this.hoop = null;
     this.rim = null;
   }
-  createBackboard() {
-    const container = document.getElementById('container');
+  createHoop() {
+    const container = document.querySelector('.container');
     this.hoop = document.createElement('div');
     this.hoop.setAttribute('id', 'hoop');
     container.appendChild(this.hoop);
@@ -13,9 +13,10 @@ class Hoop {
     this.hoop.appendChild(this.rim);
   }
   render() {
-    b.createBackboard();
+    newHoop.createHoop();
   }
+
 }
 
-const b = new Hoop();
-b.render();
+const newHoop = new Hoop;
+newHoop.render();

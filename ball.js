@@ -1,30 +1,29 @@
-class Ball {
+class Balls {
   constructor() {
     this.balls = null;
-  };
-  createBall() {
-    for(let i=1; i<6; i++) {
-      this.balls = document.createElement('div');
+  }
+
+  createBalls() {
+    for(let i=0; i<5; i++) {
+      this.balls=document.createElement('div');
       this.balls.id=`ball${i}`
       this.balls.className='ball';
-      document.getElementById('container').appendChild(this.balls);
+      document.querySelector('.container').appendChild(this.balls);
     }
   }
 
-  styleBall() {
-  let x = document.getElementsByClassName('ball')
-  for(let i=0; i<5; i++) {
-  x[i].style.left=`${Math.floor(Math.random() * 900)}px`;
-  x[i].style.top=`${Math.floor(Math.random() * 300)}px`;
-    }
+  styleBalls() {
+    document.getElementById('ball0').style.backgroundColor = '#ff005d'
+    document.getElementById('ball1').style.backgroundColor = '#ff005d'
+    document.getElementById('ball2').style.backgroundColor = '#ff005d'
+    document.getElementById('ball3').style.backgroundColor = '#ff005d'
+    document.getElementById('ball4').style.backgroundColor = '#ff005d'
   }
-
   render() {
-    a.createBall();
-    a.styleBall();
+    newBalls.createBalls();
+    newBalls.styleBalls();
   }
 }
 
-const a = new Ball();
-a.render();
-
+const newBalls = new Balls();
+newBalls.render();

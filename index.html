@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ball Games</title>
+  <title> Oh Balls </title>
+  <h1> Oh Balls </h1>
   <link rel="stylesheet" type="text/css" href="styles.css">
-<div class="banner">
-  <h1>SPACE JAM</h1>
-</div>
 </head>
-
-<div id ="container">
+<body>
+<div class="container">
 </div>
+<button id="button" onclick="countdown()">SPIN + COUNTDOWN</button>
 
-<input id="reload" type="button" value="Refresh Page" onClick="window.location.reload()">
+<p id="timer"></p>
+<p id="score">Hit?</p>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script src=CoordinateHelper.js></script>
+<script src=ball.js></script>
+<script src=bigball.js></script>
+<script src=hoop.js></script>
+<script src=counter.js></script>
 
-<script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
-<script src="CoordinateHelper.js"></script>
-<script src="ball.js"></script>
-<script src="hoop.js"></script>
-<script src="game.js"></script>
 </body>
 </html>
+
+

@@ -1,10 +1,13 @@
 setInterval(() => {
-
+  let $ball = $(ball0);
+  let offset = $ball.offset();
+  let ballLeft = offset.left;
+  let ballTop = offset.top;
 
   let $ball1 = $(ball1);
-  let offset = $ball1.offset();
-  let ballLeft1 = offset.left;
-  let ballTop1 = offset.top;
+  let offset1 = $ball1.offset();
+  let ballLeft1 = offset1.left;
+  let ballTop1 = offset1.top;
 
 
   //ball 2
@@ -25,11 +28,6 @@ setInterval(() => {
   let ballLeft4 = offset4.left;
   let ballTop4 = offset4.top;
 
-  //ball 5
-  let $ball5 = $(ball5);
-  let offset5 = $ball5.offset();
-  let ballLeft5 = offset5.left;
-  let ballTop5 = offset5.top;
 
   // hoop
   let $hoop = $(hoop);
@@ -38,20 +36,33 @@ setInterval(() => {
   let hoopTop =b.top;
 
 
-  let count = 0;
+  var counter = 0;
+    if (ballLeft- hoopLeft <= 35 && Math.abs(ballTop - hoopTop) <= 12) {
+      counter += 1
+      document.getElementById('score').innerHTML = 'Ball 1 Hit'
+      console.log('hit')
+  }
     if (ballLeft1 - hoopLeft <= 35 && Math.abs(ballTop1 - hoopTop) <= 12) {
-      document.getElementById('score').innerHTML = "Ball 1!"
+      counter+=1
+      document.getElementById('score').innerHTML = 'Ball 2 Hit'
+       console.log('hit2')
   }
     if (ballLeft2 - hoopLeft <= 35 && Math.abs(ballTop2 - hoopTop) <= 12) {
-      document.getElementById('score').innerHTML = "Ball 2!"
+      counter+=1
+      document.getElementById('score').innerHTML = 'Ball 3 Hit'
+       console.log('hit3')
   }
     if (ballLeft3 - hoopLeft <= 35 && Math.abs(ballTop3 - hoopTop) <= 12) {
-      document.getElementById('score').innerHTML = "Ball 3!";
+      counter+=1
+      document.getElementById('score').innerHTML = 'Ball 4 Hit'
+       console.log('hit4')
   }
     if (ballLeft4 - hoopLeft <= 35 && Math.abs(ballTop4 - hoopTop) <= 12) {
-      document.getElementById('score').innerHTML = "Ball 4!";
-  }
-    if (ballLeft5 - hoopLeft <= 35 && Math.abs(ballTop5 - hoopTop) <= 12) {
-      document.getElementById('score').innerHTML = "Ball 5!";
+      counter+=1
+      document.getElementById('score').innerHTML = 'Ball 5 Hit'
+       console.log('hit5')
+
   }
 }, 100);
+
+
